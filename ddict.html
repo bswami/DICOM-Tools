@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="nojs"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Searchable registry of DICOM data elements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+  <script src="ddict.js"></script>
+
+  </head>
+
+  <body>
+
+<h1 align="center"> Searchable Registry of DICOM data elements </h1>
+<table id="dicomDict">
+<thead>
+  <tr>
+    <td> Tag </td>
+    <td> Name </td>
+    <td> Keyword </td>
+    <td> VR </td>
+    <td> VM </td>
+    <td> Status </td>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+    	$('#dicomDict').dataTable ( {
+		"bPaginate" : false,
+		"aaData" : tableData,
+		"aaColumns" : [{"sTitle":"Tag"},{"sTitle":"Name"},{"sTitle":"Keyword"},{"sTitle":"VR"},{"sTitle":"VM"},{"sTitle" : "Status"}]
+	});
+    });
+    </script>
+<p>
+<br/>
+Note:	The VR for Data Elements, Item (FFFE,E000), Item Delimitation Item (FFFE,E00D), and Sequence Delimitation Item (FFFE,E0DD) do not exist. See PS 3.5 for explanation.
+
+<p>
+<div align="right">
+<font size="-2">
+Version 1.0 <br/>
+Source : Section 6, <a href="http://medical.nema.org/Dicom/2011/11_06pu.pdf">DICOM PS 3.6</a>
+</font>
+</div>
+  </body>
+</html>
